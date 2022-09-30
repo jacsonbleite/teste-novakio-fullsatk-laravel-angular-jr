@@ -1,0 +1,44 @@
+<!--
+  // TODO: criar o layout como no diagrama
+  // TODO: adicionar o link de navegação à sidebar
+  // TODO: exibir a resposta da data-hora consultada na api
+  // TODO: adicionar um input e um botão à página
+  // TODO: criar um método POST no api.service que envie o texto do input e exiba a resposta na página
+-->
+<!-- Toolbar -->
+
+<main>
+  <header>
+    <h1>Título da página</h1>
+  </header>
+
+  <div class="content-bg">
+    <div class="content">
+      <div class="sidebar-left">
+        <aside>
+          <h3>Sidebar</h3>
+          <p><a href="/start">Start</a></p>
+        </aside>
+      </div>
+      <div class="content-right">
+        <header>
+          <h2>{{ apiGreeting }}</h2>
+          <p>{{ api.data }}</p>
+        </header>
+
+        <section>
+          <form method="post" #frm="ngForm" (ngSubmit)="showMessage(frm)" ng-if="">
+            <input type="text" id="words" name="words" placeholder="Insira sua mensagem" [(ngModel)]="api.words"
+              required>
+            <button type="submit" class="btn" >Enviar</button>
+          </form>
+        </section>
+
+        <footer>
+          <p>{{textInput}}</p>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+</main>
